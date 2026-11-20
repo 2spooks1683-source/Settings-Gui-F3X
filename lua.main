@@ -1,1 +1,215 @@
-bıktım.
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "F3XSettings"
+screenGui.ResetOnSpawn = false
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screenGui.Parent = playerGui
+
+local mainFrame = Instance.new("Frame")
+mainFrame.Name = "MainFrame"
+mainFrame.Size = UDim2.new(0, 470, 0, 620)
+mainFrame.Position = UDim2.new(0.5, -235, 0.5, -310)
+mainFrame.BackgroundColor3 = Color3.fromRGB(228, 102, 20)
+mainFrame.BorderSizePixel = 0
+mainFrame.Active = true
+mainFrame.Draggable = true
+mainFrame.Parent = screenGui
+
+local mainStroke = Instance.new("UIStroke")
+mainStroke.Color = Color3.fromRGB(15, 15, 15)
+mainStroke.Thickness = 2
+mainStroke.Parent = mainFrame
+
+local allButtons = {}
+
+local function createBanner(text, yPos)
+	local box = Instance.new("Frame")
+	box.Size = UDim2.new(1, -14, 0, 38)
+	box.Position = UDim2.new(0, 7, 0, yPos)
+	box.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	box.BorderSizePixel = 0
+	box.Parent = mainFrame
+
+	local stroke = Instance.new("UIStroke")
+	stroke.Color = Color3.fromRGB(15, 15, 15)
+	stroke.Thickness = 1.5
+	stroke.Parent = box
+
+	local label = Instance.new("TextLabel")
+	label.Size = UDim2.new(1, 0, 1, 0)
+	label.BackgroundTransparency = 1
+	label.Text = text
+	label.TextColor3 = Color3.fromRGB(255, 255, 255)
+	label.TextSize = 22
+	label.Parent = box
+end
+
+local headerBox = Instance.new("Frame")
+headerBox.Size = UDim2.new(1, -14, 0, 80)
+headerBox.Position = UDim2.new(0, 7, 0, 7)
+headerBox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+headerBox.BorderSizePixel = 0
+headerBox.Parent = mainFrame
+
+local headerStroke = Instance.new("UIStroke")
+headerStroke.Color = Color3.fromRGB(15, 15, 15)
+headerStroke.Thickness = 1.5
+headerStroke.Parent = headerBox
+
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0.55, 0, 1, 0)
+titleLabel.Position = UDim2.new(0, 14, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "F3X Settings and Remaining Extras"
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.TextSize = 19
+titleLabel.TextWrapped = true
+titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+titleLabel.Parent = headerBox
+
+local leftIcon = Instance.new("ImageLabel")
+leftIcon.Size = UDim2.new(0, 66, 0, 66)
+leftIcon.Position = UDim2.new(1, -146, 0.5, -33)
+leftIcon.BackgroundTransparency = 1
+leftIcon.Image = "rbxassetid://133465456263254"
+leftIcon.ScaleType = Enum.ScaleType.Fit
+leftIcon.Parent = headerBox
+
+local rightIcon = Instance.new("ImageLabel")
+rightIcon.Size = UDim2.new(0, 66, 0, 66)
+rightIcon.Position = UDim2.new(1, -72, 0.5, -33)
+rightIcon.BackgroundTransparency = 1
+rightIcon.Image = "rbxassetid://81966908192794"
+rightIcon.ScaleType = Enum.ScaleType.Fit
+rightIcon.Parent = headerBox
+
+createBanner("Remaining Musics", 94)
+
+local musicContainer = Instance.new("Frame")
+musicContainer.Size = UDim2.new(1, -14, 0, 265)
+musicContainer.Position = UDim2.new(0, 7, 0, 138)
+musicContainer.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+musicContainer.BorderSizePixel = 0
+musicContainer.Parent = mainFrame
+
+local musicGrid = Instance.new("UIGridLayout")
+musicGrid.CellSize = UDim2.new(0.1428, -2, 0.1428, -2)
+musicGrid.CellPadding = UDim2.new(0, 2, 0, 2)
+musicGrid.SortOrder = Enum.SortOrder.LayoutOrder
+musicGrid.Parent = musicContainer
+
+local musicList = {
+	"ME ME ME! short", "FNAF", "k00pkidd's c00l Music", "PINGU ZONE", "PINGU ZONE [Earrape]", "Allah V2", "c00lkidd Allah V2",
+	"Mario Exe Theme", "Bodypartz", "You Get Nothing", "OMFG Hello", "1x1x1x1 Theme [Gothic 0.92]", "1x1x1x1 Theme [Opening]", "Electro Sp00k [Protokidd Ver]",
+	"Wonga", "Electro Sp00k Bypassed", "SSS Dubstep Not Pitched", "Jumpstyle Epic", "Gangsta Paradise", "Megalovania Undertale", "Nyan Cat",
+	"Wont Stop Us", "Stadium Rave A", "Body Rollz", "Distraction Dance", "Its Raining Men", "Raining Tacos", "Turkic March",
+	"Spongebob Pirate Rap", "Silly Dance", "Monster Mash", "N Word Funk", "Mining Away", "Wild Turkey Nights", "Can Can",
+	"Windows Sparta Remix", "Is This Sparta Remix", "Nitrovision", "Noel Dayı VS Eminem", "Racist Eminem", "AI slop Manifest Song", "Empty",
+	"Shedletsky Laugh", "1x1x1x1 Laugh", "I. M. Meen SFX", "TAKLAYA GELDİK SARP!!", "Neck Hurts", "Empty", "Empty"
+}
+
+for _, name in ipairs(musicList) do
+	local btn = Instance.new("TextButton")
+	btn.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+	btn.BorderSizePixel = 0
+	btn.Text = name
+	btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	btn.TextScaled = false
+	btn.TextSize = 9
+	btn.TextWrapped = true
+	btn.Parent = musicContainer
+
+	local stroke = Instance.new("UIStroke")
+	stroke.Color = Color3.fromRGB(228, 102, 20)
+	stroke.Thickness = 2
+	stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	stroke.Parent = btn
+
+	table.insert(allButtons, btn)
+end
+
+createBanner("Upgraded Server Destroy", 410)
+
+local destroyContainer = Instance.new("Frame")
+destroyContainer.Size = UDim2.new(1, -14, 0, 158)
+destroyContainer.Position = UDim2.new(0, 7, 0, 454)
+destroyContainer.BackgroundTransparency = 1
+destroyContainer.Parent = mainFrame
+
+local columnGroups = {
+	{
+		pos = UDim2.new(0, 0, 0, 0),
+		size = UDim2.new(0.326, 0, 1, 0),
+		items = {
+			"Skybox", "Team Amblem Sky",
+			"Hack Definition Skybox", "1x3x5x6 Skybox",
+			"Team c00lkidd Amblem Sky", "FE Bypass Skybox"
+		}
+	},
+	{
+		pos = UDim2.new(0.337, 0, 0, 0),
+		size = UDim2.new(0.326, 0, 1, 0),
+		items = {
+			"Decal Spam", "Hack Definition Decal Spam",
+			"Particle Spam", "Anonymous Particles",
+			"Skeleton Particles", "illuminati Particles"
+		}
+	},
+	{
+		pos = UDim2.new(0.674, 0, 0, 0),
+		size = UDim2.new(0.326, 0, 1, 0),
+		items = {
+			"666", "666 [Blue]",
+			"Anonymous Destroy", "c00lify",
+			"Crash Server", "Kick Server"
+		}
+	}
+}
+
+for _, group in ipairs(columnGroups) do
+	local colFrame = Instance.new("Frame")
+	colFrame.Size = group.size
+	colFrame.Position = group.pos
+	colFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	colFrame.BorderSizePixel = 0
+	colFrame.Parent = destroyContainer
+
+	local grid = Instance.new("UIGridLayout")
+	grid.CellSize = UDim2.new(0.5, -2, 0.333, -2)
+	grid.CellPadding = UDim2.new(0, 2, 0, 2)
+	grid.SortOrder = Enum.SortOrder.LayoutOrder
+	grid.Parent = colFrame
+
+	for _, itemText in ipairs(group.items) do
+		local btn = Instance.new("TextButton")
+		btn.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+		btn.BorderSizePixel = 0
+		btn.Text = itemText
+		btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+		btn.TextScaled = false
+		btn.TextSize = 12
+		btn.TextWrapped = true
+		btn.Parent = colFrame
+
+		local stroke = Instance.new("UIStroke")
+		stroke.Color = Color3.fromRGB(228, 102, 20)
+		stroke.Thickness = 2
+		stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		stroke.Parent = btn
+
+		table.insert(allButtons, btn)
+	end
+end
+
+for _, btn in ipairs(allButtons) do
+	btn.MouseButton1Click:Connect(function()
+		if btn.Text == "ME ME ME! short" then
+			[script here]
+		elseif btn.Text == "Skybox" then
+			[script here]
+		end
+	end)
+end
