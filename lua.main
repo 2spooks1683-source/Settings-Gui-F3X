@@ -1,0 +1,199 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "F3XSettings"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Parent = playerGui
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0, 480, 0, 770)
+MainFrame.Position = UDim2.new(0.5, -240, 0.5, -385)
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Active = true
+MainFrame.Draggable = true
+MainFrame.Parent = ScreenGui
+
+local MainStroke = Instance.new("UIStroke")
+MainStroke.Color = Color3.fromRGB(215, 75, 0)
+MainStroke.Thickness = 6
+MainStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+MainStroke.Parent = MainFrame
+
+local HeaderFrame = Instance.new("Frame")
+HeaderFrame.Name = "HeaderFrame"
+HeaderFrame.Size = UDim2.new(1, -24, 0, 95)
+HeaderFrame.Position = UDim2.new(0, 12, 0, 10)
+HeaderFrame.BackgroundTransparency = 1
+HeaderFrame.Parent = MainFrame
+
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Size = UDim2.new(0, 260, 1, 0)
+TitleLabel.Position = UDim2.new(0, 4, 0, 0)
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Text = "F3X Settings and Remaining Extras"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.Font = Enum.Font.Arial
+TitleLabel.TextSize = 27
+TitleLabel.TextWrapped = true
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+TitleLabel.Parent = HeaderFrame
+
+local GearImage = Instance.new("ImageLabel")
+GearImage.Name = "LeftImage"
+GearImage.Size = UDim2.new(0, 80, 0, 80)
+GearImage.Position = UDim2.new(1, -172, 0.5, -40)
+GearImage.BackgroundTransparency = 1
+GearImage.Image = "rbxassetid://133465456263254"
+GearImage.Parent = HeaderFrame
+
+local LogoImage = Instance.new("ImageLabel")
+LogoImage.Name = "RightImage"
+LogoImage.Size = UDim2.new(0, 80, 0, 80)
+LogoImage.Position = UDim2.new(1, -82, 0.5, -40)
+LogoImage.BackgroundTransparency = 1
+LogoImage.Image = "rbxassetid://81966908192794"
+LogoImage.Parent = HeaderFrame
+
+local function createSectionBanner(name, text, yPos)
+	local banner = Instance.new("TextLabel")
+	banner.Name = name
+	banner.Size = UDim2.new(1, -28, 0, 46)
+	banner.Position = UDim2.new(0, 14, 0, yPos)
+	banner.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	banner.Text = text
+	banner.TextColor3 = Color3.fromRGB(255, 255, 255)
+	banner.Font = Enum.Font.Arial
+	banner.TextSize = 25
+	banner.Parent = MainFrame
+
+	local stroke = Instance.new("UIStroke")
+	stroke.Color = Color3.fromRGB(215, 0, 0)
+	stroke.Thickness = 4
+	stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	stroke.Parent = banner
+
+	return banner
+end
+
+local function createStyledButton(parent, text, size, pos)
+	local btn = Instance.new("TextButton")
+	btn.Name = text
+	btn.Size = size
+	btn.Position = pos
+	btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	btn.BorderSizePixel = 0
+	btn.Text = text
+	btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	btn.Font = Enum.Font.Arial
+	btn.TextScaled = true
+	btn.TextWrapped = true
+	btn.Parent = parent
+
+	local padding = Instance.new("UIPadding")
+	padding.PaddingTop = UDim.new(0, 3)
+	padding.PaddingBottom = UDim.new(0, 3)
+	padding.PaddingLeft = UDim.new(0, 3)
+	padding.PaddingRight = UDim.new(0, 3)
+	padding.Parent = btn
+
+	local textConstraint = Instance.new("UITextSizeConstraint")
+	textConstraint.MaxTextSize = 18
+	textConstraint.MinTextSize = 8
+	textConstraint.Parent = btn
+
+	local stroke = Instance.new("UIStroke")
+	stroke.Color = Color3.fromRGB(215, 75, 0)
+	stroke.Thickness = 1.5
+	stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	stroke.Parent = btn
+
+	return btn
+end
+
+createSectionBanner("RemainingMusicsBanner", "Remaining Musics", 118)
+
+local MusicsContainer = Instance.new("Frame")
+MusicsContainer.Name = "MusicsContainer"
+MusicsContainer.Size = UDim2.new(1, -28, 0, 315)
+MusicsContainer.Position = UDim2.new(0, 14, 0, 178)
+MusicsContainer.BackgroundTransparency = 1
+MusicsContainer.Parent = MainFrame
+
+local musicList = {
+	"ME ME ME! short", "FNAF", "k00pkidd's c00l Music", "PINGU ZONE", "PINGU ZONE [Earrape]", "Allah V2", "c00lkidd Allah V2",
+	"Mario Exe Theme", "Bodypartz", "You Get Nothing", "OMFG Hello", "1x1x1x1 Theme [Gothic 0.92]", "1x1x1x1 Theme [Opening]", "Electro Sp00k [Protokidd Ver]",
+	"Wonga", "Electro Sp00k Bypassed", "SSS Dubstep Not Pitched", "Jumpstyle Epic", "Gangsta Paradise", "Megalovania Undertale", "Nyan Cat",
+	"Wont Stop Us", "Stadium Rave A", "Body Rollz", "Distraction Dance", "Its Raining Men", "Raining Tacos", "Turkic March",
+	"Spongebob Pirate Rap", "Silly Dance", "Monster Mash", "N Word Funk", "Mining Away", "Wild Turkey Nights", "Can Can",
+	"Windows Sparta Remix", "Is This Sparta Remix", "Nitrovision", "Noel Dayı VS Eminem", "Racist Eminem", "AI slop Manifest Song", "Empty",
+	"Shedletsky Laugh", "1x1x1x1 Laugh", "I. M. Meen SFX", "TAKLAYA GELDİK SARP!!", "Neck Hurts", "Empty", "Empty"
+}
+
+local mCols = 7
+local mBtnW = 60
+local mBtnH = 40
+local mGap = 5
+
+for i, musicName in ipairs(musicList) do
+	local col = (i - 1) % mCols
+	local row = math.floor((i - 1) / mCols)
+	local x = col * (mBtnW + mGap)
+	local y = row * (mBtnH + mGap)
+	createStyledButton(MusicsContainer, musicName, UDim2.new(0, mBtnW, 0, mBtnH), UDim2.new(0, x, 0, y))
+end
+
+createSectionBanner("UpgradedServerDestroyBanner", "Upgraded Server Destroy", 505)
+
+local DestroyContainer = Instance.new("Frame")
+DestroyContainer.Name = "DestroyContainer"
+DestroyContainer.Size = UDim2.new(1, -28, 0, 185)
+DestroyContainer.Position = UDim2.new(0, 14, 0, 565)
+DestroyContainer.BackgroundTransparency = 1
+DestroyContainer.Parent = MainFrame
+
+local destroyGroups = {
+	{
+		xOffset = 0,
+		items = {
+			"Skybox", "Team Amblem Sky",
+			"Hack Definition Skybox", "1x3x5x6 Skybox",
+			"Team c00lkidd Amblem Sky", "FE Bypass Skybox"
+		}
+	},
+	{
+		xOffset = 148,
+		items = {
+			"Decal Spam", "Hack Definition Decal Spam",
+			"Particle Spam", "Anonymous Particles",
+			"Skeleton Particles", "illuminati Particles"
+		}
+	},
+	{
+		xOffset = 314,
+		items = {
+			"666", "666 [Blue]",
+			"Anonymous Destroy", "c00lify",
+			"Crash Server", "Kick Server"
+		}
+	}
+}
+
+local dBtnW = 66
+local dBtnH = 56
+local dGap = 6
+
+for _, group in ipairs(destroyGroups) do
+	for i, itemText in ipairs(group.items) do
+		local col = (i - 1) % 2
+		local row = math.floor((i - 1) / 2)
+		local x = group.xOffset + col * (dBtnW + dGap)
+		local y = row * (dBtnH + dGap)
+		createStyledButton(DestroyContainer, itemText, UDim2.new(0, dBtnW, 0, dBtnH), UDim2.new(0, x, 0, y))
+	end
+end
