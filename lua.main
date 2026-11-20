@@ -198,10 +198,10 @@ for _, group in ipairs(destroyGroups) do
 	end
 end
 
-createStyledButton(MusicsContainer, "ME ME ME! short", UDim2.new(0, mBtnW, 0, mBtnH), UDim2.new(0, 0, 0, 0), function() 
-   print("Nonify")
+createStyledButton(MusicsContainer, "ME ME ME! short", UDim2.new(0, mBtnW, 0, mBtnH), UDim2.new(0, x, 0, y), function() 
+    print("Nonify")
 end)
 
-createStyledButton(MusicsContainer, "FNAF", UDim2.new(0, mBtnW, 0, mBtnH), UDim2.new(0, 65, 0, 0), function() 
-    print("nonify")
+createStyledButton(MusicsContainer, "FNAF", UDim2.new(0, mBtnW, 0, mBtnH), UDim2.new(0, x, 0, y), function() 
+    print("Nonify")
 end)
