@@ -102,7 +102,7 @@ musicGrid.SortOrder = Enum.SortOrder.LayoutOrder
 musicGrid.Parent = musicContainer
 
 local musicList = {
-	"ME ME ME! short", "FNAF", "k00pkidd's c00l Music", "PINGU ZONE", "PINGU ZONE [Earrape]", "Allah V2", "c00lkidd Allah V2",
+	"ME ME ME! short", "FNAF", "k00pkidd's c00l Music", "PINGU ZONE", "PINGU ZONE V2", "Allah V2", "c00lkidd Allah V2",
 	"Mario Exe Theme", "Bodypartz", "You Get Nothing", "OMFG Hello", "1x1x1x1 Theme [Gothic 0.92]", "1x1x1x1 Theme [Opening]", "Electro Sp00k [Protokidd Ver]",
 	"Wonga", "Electro Sp00k Bypassed", "SSS Dubstep Not Pitched", "Jumpstyle Epic", "Gangsta Paradise", "Megalovania Undertale", "Nyan Cat",
 	"Wont Stop Us", "Stadium Rave A", "Body Rollz", "Distraction Dance", "Its Raining Men", "Raining Tacos", "Turkic March",
