@@ -258,3 +258,5 @@ setButtonAction(musicContainer, "1x1x1x1 Laugh", function() print("no") end)
 setButtonAction(musicContainer, "I. M. Meen SFX", function() print("no") end)
 setButtonAction(musicContainer, "TAKLAYA GELDİK SARP!!", function() print("no") end)
 setButtonAction(musicContainer, "Neck Hurts", function() print("no") end)
+
+setButtonAction(destroyContainer, "Skybox", function() print("Annemmm") end)
