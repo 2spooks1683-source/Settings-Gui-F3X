@@ -103,7 +103,7 @@ musicGrid.Parent = musicContainer
 
 local musicList = {
 	"ME ME ME! short", "FNAF", "k00pkidd's c00l Music", "PINGU ZONE", "PINGU ZONE V2", "Allah V2", "c00lkidd Allah V2",
-	"Mario Exe Theme", "Bodypartz", "You Get Nothing", "OMFG Hello", "1x1x1x1 Theme [Gothic 0.92]", "1x1x1x1 Theme [Opening]", "Electro Sp00k [Protokidd Ver]",
+	"Mario Exe Theme", "Bodypartz", "You Get Nothing", "OMFG Hello", "1x1x1x1 Theme", "1x1x1x1 Opening", "Protokidd E.S",
 	"Wonga", "Electro Sp00k Bypassed", "SSS Dubstep Not Pitched", "Jumpstyle Epic", "Gangsta Paradise", "Megalovania Undertale", "Nyan Cat",
 	"Wont Stop Us", "Stadium Rave A", "Body Rollz", "Distraction Dance", "Its Raining Men", "Raining Tacos", "Turkic March",
 	"Spongebob Pirate Rap", "Silly Dance", "Monster Mash", "N Word Funk", "Mining Away", "Wild Turkey Nights", "Can Can",
@@ -212,7 +212,48 @@ local function setButtonAction(container, buttonText, onClick)
     end
 end
 
-setButtonAction(musicContainer, "ME ME ME! short", function() print("Nonify") end)
-setButtonAction(musicContainer, "FNAF", function() print("Nonify Yet") end)
-setButtonAction(musicContainer, "k00pkidd's c00l Music", function() print("k00pkidd tıklandı") end)
-setButtonAction(musicContainer, "PINGU ZONE", function() print("Pingu tıklandı") end)
+setButtonAction(musicContainer, "ME ME ME! short", function() [script here] end)
+setButtonAction(musicContainer, "FNAF", function() [script here] end)
+setButtonAction(musicContainer, "k00pkidd's c00l Music", function() [script here] end)
+setButtonAction(musicContainer, "PINGU ZONE", function() [script here] end)
+setButtonAction(musicContainer, "PINGU ZONE V2", function() [script here] end)
+setButtonAction(musicContainer, "Allah V2", function() [script here] end)
+setButtonAction(musicContainer, "c00lkidd Allah V2", function() [script here] end)
+setButtonAction(musicContainer, "Mario Exe Theme", function() [script here] end)
+setButtonAction(musicContainer, "Bodypartz", function() [script here] end)
+setButtonAction(musicContainer, "You Get Nothing", function() [script here] end)
+setButtonAction(musicContainer, "OMFG Hello", function() [script here] end)
+setButtonAction(musicContainer, "1x1x1x1 Theme", function() [script here] end)
+setButtonAction(musicContainer, "1x1x1x1 Opening", function() [script here] end)
+setButtonAction(musicContainer, "Protokidd E.S", function() [script here] end)
+setButtonAction(musicContainer, "Wonga", function() [script here] end)
+setButtonAction(musicContainer, "Electro Sp00k Bypassed", function() [script here] end)
+setButtonAction(musicContainer, "SSS Dubstep Not Pitched", function() [script here] end)
+setButtonAction(musicContainer, "Jumptstyle Epic", function() [script here] end)
+setButtonAction(musicContainer, "Gangsta Paradise", function() [script here] end)
+setButtonAction(musicContainer, "Megalovania Undertale", function() [script here] end)
+setButtonAction(musicContainer, "Nyan Cat", function() [script here] end)
+setButtonAction(musicContainer, "Wont Stop Us", function() [script here] end)
+setButtonAction(musicContainer, "Stadium Rave A", function() [script here] end)
+setButtonAction(musicContainer, "Body Rollz", function() [script here] end)
+setButtonAction(musicContainer, "Distraction Dance", function() [script here] end)
+setButtonAction(musicContainer, "Its Raining Men", function() [script here] end)
+setButtonAction(musicContainer, "Raining Tacos", function() [script here] end)
+setButtonAction(musicContainer, "Turkic March", function() [script here] end)
+setButtonAction(musicContainer, "Spongebob Pirate Rap", function() [script here] end)
+setButtonAction(musicContainer, "Silly Dance", function() [script here] end)
+setButtonAction(musicContainer, "Monster Mash", function() [script here] end)
+setButtonAction(musicContainer, "N Word Funk", function() [script here] end)
+setButtonAction(musicContainer, "Mining Away", function() [script here] end)
+setButtonAction(musicContainer, "Wild Turkey Nights", function() [script here] end)
+setButtonAction(musicContainer, "Can Can", function() [script here] end)
+setButtonAction(musicContainer, "Windows Sparta Remix", function() [script here] end)
+setButtonAction(musicContainer, "Is This Sparta Remix", function() [script here] end)
+setButtonAction(musicContainer, "Nitrovision", function() [script here] end)
+setButtonAction(musicContainer, "Noel Dayı VS Eminem", function() [script here] end)
+setButtonAction(musicContainer, "AI Slop Manifest Song", function() [script here] end)
+setButtonAction(musicContainer, "Shedletsky Laugh", function() print("no") end)
+setButtonAction(musicContainer, "1x1x1x1 Laugh", function() print("no") end)
+setButtonAction(musicContainer, "I. M. Meen SFX", function() print("no") end)
+setButtonAction(musicContainer, "TAKLAYA GELDİK SARP!!", function() print("no") end)
+setButtonAction(musicContainer, "Neck Hurts", function() print("no") end)
