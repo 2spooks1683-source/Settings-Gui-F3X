@@ -43,7 +43,7 @@ local function createBanner(text, yPos)
 	label.BackgroundTransparency = 1
 	label.Text = text
 	label.TextColor3 = Color3.fromRGB(255, 255, 255)
-	label.TextSize = 22
+	label.TextSize = 15
 	label.Parent = box
 end
 
@@ -204,12 +204,15 @@ for _, group in ipairs(columnGroups) do
 	end
 end
 
-for _, btn in ipairs(allButtons) do
-	btn.MouseButton1Click:Connect(function()
-		if btn.Text == "ME ME ME! short" then
-			[script here]
-		elseif btn.Text == "Skybox" then
-			[script here]
-		end
-	end)
+local function setButtonAction(container, buttonText, onClick)
+    for _, btn in ipairs(container:GetChildren()) do
+        if btn:IsA("TextButton") and btn.Text == buttonText then
+            btn.MouseButton1Click:Connect(onClick)
+        end
+    end
 end
+
+setButtonAction(musicContainer, "ME ME ME! short", function() print("Nonify") end)
+setButtonAction(musicContainer, "FNAF", function() print("Nonify Yet") end)
+setButtonAction(musicContainer, "k00pkidd's c00l Music", function() print("k00pkidd tıklandı") end)
+setButtonAction(musicContainer, "PINGU ZONE", function() print("Pingu tıklandı") end)
