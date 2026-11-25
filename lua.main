@@ -252,7 +252,7 @@ setupButtonAction("Nitrovision", function() local ReplicatedStorage = game:GetSe
 setupButtonAction("Noel Dayı VS Eminem", function() local ReplicatedStorage = game:GetService("ReplicatedStorage") local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent RequestCommand:InvokeServer(":music 88051072099707 :pitch 0.096 :volume 10") end)
 setupButtonAction("Racist Eminem", function() local ReplicatedStorage = game:GetService("ReplicatedStorage") local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent RequestCommand:InvokeServer(":music 94797081270081 :pitch 0.2 :volume 6") end)
 setupButtonAction("ハロウィーン", function() local ReplicatedStorage = game:GetService("ReplicatedStorage") local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent RequestCommand:InvokeServer(":music 137172267069591 :volume 5") end)
-setupButtonAction("Godumun Andini", function local ReplicatedStorage = game:GetService("ReplicatedStorage") local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent RequestCommand:InvokeServer(":music 107923262879438 :pitch 0.1 :volume 10") end)
+setupButtonAction("Godumun Andini", function() local ReplicatedStorage = game:GetService("ReplicatedStorage") local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent RequestCommand:InvokeServer(":music 107923262879438 :pitch 0.1 :volume 10") end)
 setupButtonAction("Shedletsky Laugh", function() print("no") end)
 setupButtonAction("1x1x1x1 Laugh", function() print("no") end)
 setupButtonAction("I. M. Meen SFX", function() print("no") end)
